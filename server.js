@@ -6,21 +6,6 @@ var request = require("request");
 
 app.use(cors());
 
-const database = {
-  users: [
-    {
-      id: "123",
-      name: "Andrei",
-      email: "john@gmail.com",
-      entries: 0,
-      joined: new Date()
-    }
-  ],
-  secrets: {
-    users_id: "123",
-    hash: "wghhh"
-  }
-};
 app.get("/:id/", (req, res) => {
   let url = `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=29EF7EEC8C71AF5CE31F515CFFCC2956&steamid=${
     req.params.id
