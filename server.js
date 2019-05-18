@@ -43,6 +43,7 @@ app.get("/:id/", (req, res) => {
 
 app.use("/", express.static("public"));
 
-var port = 4000;
-var server = app.listen(port);
-console.log("Listening on port " + port);
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, console.log(`Server started on port ${PORT}`));
